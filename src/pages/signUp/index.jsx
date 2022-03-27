@@ -21,12 +21,7 @@ export const SignUp = () => {
       </div>
       <div className="flex flex-col items-center justify-center space-y-5">
         <div className="flex w-full items-center justify-center space-x-2">
-          <input
-            className="form-check-input float-left my-1 h-4 w-4 cursor-pointer appearance-none rounded rounded-sm border border-gray-300 bg-white bg-contain bg-center bg-no-repeat align-top transition duration-200 checked:border-blue-600 checked:bg-blue-600 focus:outline-none"
-            type="checkbox"
-            value=""
-            id="flexCheckDefault3"
-          />
+          <input type="checkbox" className="border-0" />
           <p className="text-[#8A92A6]">I agree with the terms of use</p>
         </div>
         <button className="w-40 rounded bg-[#3A57E8] py-2 px-4 text-white hover:bg-blue-700">
