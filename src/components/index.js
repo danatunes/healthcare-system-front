@@ -1,0 +1,1 @@
+export {TypesOfLogin} from "./integrationLogin"
