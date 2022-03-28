@@ -3,30 +3,31 @@ import { InputWithBottomBorder } from "../../ui/inputs/inputWithBottomBorder";
 import { TypesOfLogin } from "../../components";
 import { Button } from "../../ui/button/button";
 
-export const SignUp = () => {
+export const Login = () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center space-y-2">
         <h1 className="items-center text-4xl font-medium text-black">
-          Sign Up
+          Sign In
         </h1>
-        <p className="text-[#8A92A6]">Create your account</p>
+        <p className="text-[#8A92A6]">Sign in to stay connected.</p>
       </div>
-      <div className="grid grid-cols-2 gap-3">
-        <InputWithBottomBorder name="First Name" />
-        <InputWithBottomBorder name="Last Name" />
+      <div className="grid grid-cols-1 gap-3">
         <InputWithBottomBorder name="Email" />
-        <InputWithBottomBorder name="Phone No." />
         <InputWithBottomBorder name="Password" />
-        <InputWithBottomBorder name="Confirm password" />
       </div>
       <div className="flex flex-col items-center justify-center space-y-5">
-        <div className="flex w-full items-center justify-center space-x-2">
-          <input type="checkbox" className="border-0" />
-          <p className="text-[#8A92A6]">I agree with the terms of use</p>
+        <div className="flex w-full flex-row justify-between">
+          <div className="flex items-center space-x-2">
+            <input type="checkbox" className="border-0" />
+            <p className="text-[#8A92A6]">Remember me?</p>
+          </div>
+          <a href="#" className="text-[#458FF6]">
+            Forgot Password
+          </a>
         </div>
-        <Button name="Sign up" />
-        <p className="text-black">or sign up with other accounts?</p>
+        <Button name="Sign in" />
+        <p className="text-black">or sign in with other accounts?</p>
         <TypesOfLogin />
         <p className="text-black">
           Already have an Account{" "}
