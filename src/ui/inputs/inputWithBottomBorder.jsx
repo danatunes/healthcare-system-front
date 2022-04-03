@@ -5,7 +5,7 @@ export const InputWithBottomBorder = ({ name, style }) => {
   return (
     <div
       className={clsx(
-        "mt-1 border-b border-black focus-within:border-indigo-600",
+        "mt-1 min-w-[250px] border-b border-black focus-within:border-indigo-600",
         style
       )}
     >

@@ -2,6 +2,7 @@ import React from "react";
 import { InputWithBottomBorder } from "../../ui/inputs/inputWithBottomBorder";
 import { TypesOfLogin } from "../../components";
 import { Button } from "../../ui/button/button";
+import clsx from "clsx";
 
 export const Login = () => {
   return (
@@ -12,12 +13,12 @@ export const Login = () => {
         </h1>
         <p className="text-[#8A92A6]">Sign in to stay connected.</p>
       </div>
-      <div className="grid grid-cols-1 gap-3">
-        <InputWithBottomBorder name="Email" />
-        <InputWithBottomBorder name="Password" />
+      <div className={clsx("grid grid-cols-1 gap-3 w-[300px]","sm:w-[430px]")}>
+        <InputWithBottomBorder name="Email" style="w-full"/>
+        <InputWithBottomBorder name="Password" style="w-full"/>
       </div>
       <div className="flex flex-col items-center justify-center space-y-5">
-        <div className="flex w-full flex-row justify-between">
+        <div className="flex w-full flex-row justify-between space-x-2">
           <div className="flex items-center space-x-2">
             <input type="checkbox" className="border-0" />
             <p className="text-[#8A92A6]">Remember me?</p>

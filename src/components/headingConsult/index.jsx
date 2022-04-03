@@ -1,11 +1,12 @@
 import React from "react";
 import BgDoctors from "../../images/bg_doctors.webp";
 import { Button } from "../../ui/button/button";
+import clsx from "clsx";
 
 export const HeadingConsult = () => {
   return (
     <div className="flex h-full w-full flex-col items-center justify-center space-y-12 font-montserrat">
-      <div className="grid grid-cols-2 align-middle">
+      <div className={clsx("grid grid-cols-1 align-middle","sm:grid-cols-2")}>
         <div className="flex flex-col justify-center space-y-10">
           <h1 className="text-2xl font-bold">
             Virtual healthcare
@@ -24,7 +25,7 @@ export const HeadingConsult = () => {
             style="bg-[#3A57E8] rounded-3xl h-12 font-montserrat font-bold text-sm"
           />
         </div>
-        <div>
+        <div className={clsx("hidden","sm:block")}>
           <img src={BgDoctors} alt="bg-doctor" />
         </div>
       </div>

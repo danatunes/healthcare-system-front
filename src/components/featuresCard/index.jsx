@@ -5,6 +5,7 @@ import Pill_icon from "../../images/pill_icon.webp";
 import Details_icon from "../../images/details_info.webp";
 import Emergency_icon from "../../images/emergency_care.webp";
 import Tracking_icon from "../../images/tracking.webp";
+import clsx from "clsx";
 
 export const FeaturesCard = () => {
   const servicesCardData = useMemo(
@@ -52,7 +53,7 @@ export const FeaturesCard = () => {
   );
 
   return (
-    <div className="grid grid-cols-3 gap-10">
+    <div className={clsx("grid grid-cols-1 gap-10","md:grid-cols-3","sm:grid-cols-2")}>
       {servicesCardData.map((data) => (
         <Card name={data.title} desc={data.desc} img={data.img} key={data.id} />
       ))}

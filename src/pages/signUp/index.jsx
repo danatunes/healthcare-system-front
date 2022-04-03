@@ -2,6 +2,7 @@ import React from "react";
 import { InputWithBottomBorder } from "../../ui/inputs/inputWithBottomBorder";
 import { TypesOfLogin } from "../../components";
 import { Button } from "../../ui/button/button";
+import clsx from "clsx";
 
 export const SignUp = () => {
   return (
@@ -12,7 +13,7 @@ export const SignUp = () => {
         </h1>
         <p className="text-[#8A92A6]">Create your account</p>
       </div>
-      <div className="grid grid-cols-2 gap-3">
+      <div className={clsx("grid grid-cols-1 gap-3","md:grid-cols-2")}>
         <InputWithBottomBorder name="First Name" />
         <InputWithBottomBorder name="Last Name" />
         <InputWithBottomBorder name="Email" />

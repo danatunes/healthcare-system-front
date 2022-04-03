@@ -5,6 +5,7 @@ import { Footer } from "../../components/footer";
 import Bg_Decor_Plus from "../../images/bg_decor_plus.webp";
 import Bg_Decor_Dots from "../../images/bg_decor_dots.webp";
 import Bg_Decor_Area from "../../images/bg_decor_area.webp";
+import clsx from "clsx";
 
 export const MainLayout = () => {
   return (
@@ -12,7 +13,7 @@ export const MainLayout = () => {
       <img
         src={Bg_Decor_Plus}
         alt="decor"
-        className="absolute -top-10 left-40 w-20"
+        className={clsx("absolute -top-20 left-0 w-10","sm:left-40 sm:w-20 sm:-top-10")}
       />
       <img
         src={Bg_Decor_Dots}
