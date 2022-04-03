@@ -15,7 +15,7 @@ export const Header = () => {
                 name="account-number"
                 id="account-number"
                 className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pr-10 sm:text-sm border-gray-300 rounded-md"
-                placeholder="000-00-0000"
+                placeholder="Search"
             />
             <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                 <SearchIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
