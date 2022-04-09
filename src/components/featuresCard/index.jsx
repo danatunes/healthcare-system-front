@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, {useMemo} from "react";
 import Consulting_icon from "../../images/consulting.webp";
 import Search_icon from "../../images/searchIcon.webp";
 import Pill_icon from "../../images/pill_icon.webp";
@@ -63,7 +63,7 @@ export const FeaturesCard = () => {
 
 const Card = ({ name, desc, img }) => {
   return (
-    <div className="space-y-8 rounded-3xl bg-white p-6">
+    <div className="flex flex-col items-center justify-center space-y-8 rounded-3xl bg-white p-6">
       <img src={img} className="w-16" alt="img_service" />
       <div>
         <h3 className="text-md font-montserrat font-bold">{name}</h3>
