@@ -17,7 +17,7 @@ export const SignUp = () => {
         <InputWithBottomBorder name="First Name" />
         <InputWithBottomBorder name="Last Name" />
         <InputWithBottomBorder name="Email" />
-        <InputWithBottomBorder name="Phone No." />
+        <InputWithBottomBorder name="IIN" />
         <InputWithBottomBorder name="Password" />
         <InputWithBottomBorder name="Confirm password" />
       </div>

@@ -1,7 +1,6 @@
 import React from "react";
 import { HeadingConsult } from "../../components/headingConsult";
 import { FeaturesCard } from "../../components/featuresCard";
-import { Footer } from "../../components/footer";
 import Bg_Decor_Plus from "../../images/bg_decor_plus.webp";
 import Bg_Decor_Dots from "../../images/bg_decor_dots.webp";
 import Bg_Decor_Area from "../../images/bg_decor_area.webp";
@@ -13,7 +12,10 @@ export const MainLayout = () => {
       <img
         src={Bg_Decor_Plus}
         alt="decor"
-        className={clsx("absolute -top-20 left-0 w-10","sm:left-40 sm:w-20 sm:-top-10")}
+        className={clsx(
+          "absolute -top-20 left-0 w-10",
+          "sm:left-40 sm:w-20 sm:-top-10"
+        )}
       />
       <img
         src={Bg_Decor_Dots}
@@ -28,7 +30,6 @@ export const MainLayout = () => {
       <div className="h-full w-full space-y-20">
         <HeadingConsult />
         <FeaturesCard />
-        <Footer />
       </div>
     </>
   );
