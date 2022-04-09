@@ -12,8 +12,8 @@ export const IndexLayout = () => {
         <Suspense fallback={<div>loading...</div>}>
           <Outlet />
         </Suspense>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 };
