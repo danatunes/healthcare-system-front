@@ -14,7 +14,7 @@ export const MainLayout = () => {
         alt="decor"
         className={clsx(
           "absolute -top-20 left-0 w-10",
-          "sm:left-40 sm:w-20 sm:-top-10"
+          "md:left-40 md:w-20 md:-top-10"
         )}
       />
       <img
