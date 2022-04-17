@@ -1,10 +1,15 @@
 import React from "react";
-import { InputWithBottomBorder } from "../../ui/inputs/inputWithBottomBorder";
-import { TypesOfLogin } from "../../components";
-import { Button } from "../../ui/button/button";
+import {InputWithBottomBorder} from "../../ui/inputs/inputWithBottomBorder";
+import {TypesOfLogin} from "../../components";
+import {Button} from "../../ui/button/button";
 import clsx from "clsx";
 
 export const Login = () => {
+
+  const handlerLogin = () => {
+    console.log("login");
+  };
+
   return (
     <>
       <div className="flex flex-col items-center justify-center space-y-2">
