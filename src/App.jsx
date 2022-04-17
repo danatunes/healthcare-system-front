@@ -9,6 +9,7 @@ import {IndexLayout} from "./layouts/index-layout";
 import {DoctorLayout} from "./layouts/doctor-layout";
 import {DoctorProfile} from "./pages/doctor-profile";
 import {DoctorPatients} from "./pages/doctor-patiens";
+import {Calendar} from "./components/calendar";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="doctor" element={<DoctorLayout />} >
           <Route path="" element={<DoctorProfile />} />
             <Route path="patients" element={<DoctorPatients/>}/>
+            <Route path="calendar" element={<Calendar/>}/>
         </Route>
       </Route>
       {/*<Route exact path='/main' element={token===null ? <Navigate to='/signUp'/> : <Navigate to='/main'/>}/>*/}
