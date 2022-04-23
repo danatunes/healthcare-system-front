@@ -23,7 +23,7 @@ function App() {
       <Route exact path="/" element={<IndexLayout />}>
         <Route path="main" element={<MainLayout />} />
         <Route path="doctor" element={<DoctorLayout />} >
-          <Route path="" element={<DoctorProfile />} />
+            <Route path="calendar" element={<Calendar/>}/>
             <Route path="patients" element={<DoctorPatients/>}/>
         </Route>
       </Route>
