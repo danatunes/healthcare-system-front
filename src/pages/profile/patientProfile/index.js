@@ -1,1 +1,1 @@
-export { PatientProfile as default } from "./PatientProfile";
+export { PatientProfile as default } from "./patientProfile";
