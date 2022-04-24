@@ -1,60 +1,19 @@
-import {Link} from "react-router-dom";
-import {Fragment} from "react";
-import {Menu, Transition} from "@headlessui/react";
-import {ChevronDownIcon} from "@heroicons/react/solid";
-import clsx from "clsx";
+import { List } from "../list";
+import { Menu, Transition } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/solid";
+import { Fragment } from "react";
 
-export const DoctorProfile = () => {
-
+export const LastNotificationList = ({ data, isDoctor }) => {
   return (
-    <div className="w-full h-full flex flex-col font-montserrat space-y-9">
-      <div>
-        <h1 className="font-bold text-2xl">Welcome Dr. Vin Diesel!</h1>
-        <p className="font-normal font-montserrat text-gray-400 text-sm">
-          Check the latest updateson your account
-        </p>
-      </div>
-      <div className={clsx("grid grid-cols-1 gap-5", "sm:grid-cols-2")}>
-        <ConsultingCart type="Offline" when="Today" count="10" />
-        <ConsultingCart type="Online" when="Today" count="6" />
-      </div>
-      <div className="bg-white rounded-xl shadow-lg p-4 space-y-3.5">
-        <h1 className="font-medium text-xl">Last Notifications</h1>
-        <div className="py-4 px-2.5 space-y-4 bg-[#F8F9FD] rounded-xl max-h-[250px] overflow-y-auto">
-          <DropDown />
-          <DropDown />
-          <DropDown />
-          <DropDown />
-          <DropDown />
-          <DropDown />
-          <DropDown />
-          <DropDown />
-          <DropDown />
-          <DropDown />
-        </div>
-      </div>
-    </div>
+    <List header={<h1 className="font-medium text-xl">Last Notifications</h1>}>
+      <DropDown isDoctor={isDoctor} />
+      <DropDown isDoctor={isDoctor} />
+      <DropDown isDoctor={isDoctor} />
+    </List>
   );
 };
 
-const ConsultingCart = ({ type, when, count }) => {
-  return (
-    <div className="flex flex-col bg-white rounded-xl shadow-lg p-3 justify-between">
-      <div className="font-normal">
-        <h1 className="text-xl">{type} Consultation</h1>
-        <p className="text-sm text-gray-400">{when}</p>
-      </div>
-      <div className="flex flex-row justify-between items-end mt-12">
-        <p className="font-normal text-5xl text-[#3A57E8]">{count}</p>
-        <Link to="#" className="font-normal text-sm text-end">
-          View All
-        </Link>
-      </div>
-    </div>
-  );
-};
-
-const DropDown = () => {
+const DropDown = ({ isDoctor }) => {
   return (
     <Menu as="div" className="relative w-full inline-block text-left">
       <div>
@@ -82,7 +41,9 @@ const DropDown = () => {
               <table className="w-full overflow-hidden table-auto font-montserrat">
                 <thead>
                   <tr className="text-sm text-gray-400">
-                    <th className="font-normal">Patient</th>
+                    <th className="font-normal">
+                      {isDoctor ? "Patient" : "Doctor"}
+                    </th>
                     <th className="font-normal">Symptoms</th>
                     <th className="font-normal">Time</th>
                     <th className="font-normal">Number</th>

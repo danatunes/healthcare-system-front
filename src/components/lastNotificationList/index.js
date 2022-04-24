@@ -1,0 +1,1 @@
+export { LastNotificationList } from "./lastNotificationList";
