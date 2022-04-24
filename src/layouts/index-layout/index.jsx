@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import { Footer, Header } from "../../components";
 import { Outlet } from "react-router-dom";
 import clsx from "clsx";
+import Loader from "../../ui/loader/loader";
 
 export const IndexLayout = () => {
   return (
@@ -9,7 +10,7 @@ export const IndexLayout = () => {
       <div className={clsx("w-full h-full mx-auto space-y-20", "md:w-10/12")}>
         <Header />
         <div className={clsx("mx-auto h-full w-full", "sm:w-10/12")}>
-          <Suspense fallback={<div>loading...</div>}>
+          <Suspense fallback={<Loader />}>
             <Outlet />
           </Suspense>
         </div>

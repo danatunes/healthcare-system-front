@@ -2,6 +2,7 @@ import { Suspense, useState } from "react";
 import { PencilAltIcon } from "@heroicons/react/solid";
 import { Outlet } from "react-router-dom";
 import clsx from "clsx";
+import Loader from "../../ui/loader/loader";
 
 export const DoctorLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +10,7 @@ export const DoctorLayout = () => {
   return (
     <>
       <div className="w-full h-full flex flex-col font-montserrat space-y-9">
-        <Suspense fallback={<div>loading...</div>}>
+        <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
       </div>

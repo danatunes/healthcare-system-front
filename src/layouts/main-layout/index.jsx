@@ -1,6 +1,5 @@
 import React from "react";
-import { HeadingMainPage } from "../../components/headingMainPage/HeadingMainPage";
-import { FeaturesCard } from "../../components/featuresCard/FeaturesCard";
+import { FeaturesCard, HeadingMainPage } from "../../components";
 import Bg_Decor_Plus from "../../images/bg_decor_plus.webp";
 import Bg_Decor_Dots from "../../images/bg_decor_dots.webp";
 import Bg_Decor_Area from "../../images/bg_decor_area.webp";
