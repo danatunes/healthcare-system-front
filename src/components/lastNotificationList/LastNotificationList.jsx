@@ -3,9 +3,12 @@ import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import { Fragment } from "react";
 
-export const LastNotificationList = ({ data, isDoctor }) => {
+export const LastNotificationList = ({ data, isDoctor, className }) => {
   return (
-    <List header={<h1 className="font-medium text-xl">Last Notifications</h1>}>
+    <List
+      className={className}
+      header={<h1 className="font-medium text-xl">Last Notifications</h1>}
+    >
       <DropDown isDoctor={isDoctor} />
       <DropDown isDoctor={isDoctor} />
       <DropDown isDoctor={isDoctor} />

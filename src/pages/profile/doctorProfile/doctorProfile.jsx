@@ -10,7 +10,7 @@ export const DoctorProfile = () => {
         <ConsultingCart type="Offline" when="Today" count="10" />
         <ConsultingCart type="Online" when="Today" count="6" />
       </div>
-      <LastNotificationList isDoctor={true} />
+      <LastNotificationList className="py-4 px-2.5" isDoctor={true} />
     </>
   );
 };
