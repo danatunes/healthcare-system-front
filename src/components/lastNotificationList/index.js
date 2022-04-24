@@ -1,1 +1,1 @@
-export { LastNotificationList } from "./lastNotificationList";
+export { LastNotificationList } from "./LastNotificationList";
