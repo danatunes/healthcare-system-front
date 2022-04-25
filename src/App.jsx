@@ -4,6 +4,7 @@ import { MainLayout } from "./layouts/main-layout";
 import { IndexLayout } from "./layouts/index-layout";
 import { DoctorLayout } from "./layouts/doctor-layout";
 import { lazy } from "react";
+import { ChosenClinic } from "./pages/chosenClinic/chosenClinic";
 
 const Login = lazy(() => import("./pages/login"));
 const SignUp = lazy(() => import("./pages/signUp"));
@@ -12,6 +13,7 @@ const ResetPassword = lazy(() => import("./pages/resetPassword"));
 const DoctorProfile = lazy(() => import("./pages/profile/doctorProfile"));
 const DoctorPatients = lazy(() => import("./pages/doctorPatients"));
 const PatientProfile = lazy(() => import("./pages/profile/patientProfile"));
+const PatientClinic = lazy(() => import("./pages/patientClinics"));
 
 function App() {
   return (
@@ -29,8 +31,12 @@ function App() {
           <Route path="" element={<DoctorProfile />} />
           <Route path="patients" element={<DoctorPatients />} />
         </Route>
-        <Route path="patient" element={<PatientProfile />}>
-          <Route path="clinic" element={<div>clinic</div>} />
+        <Route exact path="patient">
+          <Route path="" element={<PatientProfile />} />
+          <Route path="clinics">
+            <Route path="" element={<PatientClinic />} />
+            <Route path=":id" element={<ChosenClinic />} />
+          </Route>
         </Route>
       </Route>
       {/*<Route exact path='/main' element={token===null ? <Navigate to='/signUp'/> : <Navigate to='/main'/>}/>*/}

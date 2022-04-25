@@ -6,3 +6,4 @@ export { HeadingMainPage } from "./headingMainPage";
 export { Header } from "./header";
 export { Footer } from "./footer";
 export { LastNotificationList } from "./lastNotificationList";
+export { ClinicCard } from "./clinicCard";
