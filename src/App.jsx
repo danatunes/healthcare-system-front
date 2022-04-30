@@ -14,16 +14,19 @@ const DoctorProfile = lazy(() => import("./pages/profile/doctorProfile"));
 const DoctorPatients = lazy(() => import("./pages/doctorPatients"));
 const PatientProfile = lazy(() => import("./pages/profile/patientProfile"));
 const PatientClinic = lazy(() => import("./pages/patientClinics"));
+const DoctorProfileForPatient = lazy(() =>
+  import("./pages/profile/doctorProfileForPatient")
+);
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/main" replace />} />
       <Route exact path="/" element={<StartPageLayout />}>
-        <Route path="/login" element={<Login />} />
-        <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/confirm" element={<Confirm />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="login" element={<Login />} />
+        <Route path="sign-up" element={<SignUp />} />
+        <Route path="confirm" element={<Confirm />} />
+        <Route path="reset-password" element={<ResetPassword />} />
       </Route>
       <Route exact path="/" element={<IndexLayout />}>
         <Route path="main" element={<MainLayout />} />
@@ -35,7 +38,11 @@ function App() {
           <Route path="" element={<PatientProfile />} />
           <Route path="clinics">
             <Route path="" element={<PatientClinic />} />
-            <Route path=":id" element={<ChosenClinic />} />
+            <Route path=":id" element={<ChosenClinic />}>
+              <Route path="doctor">
+                <Route path=":id" element={<DoctorProfileForPatient />} />
+              </Route>
+            </Route>
           </Route>
         </Route>
       </Route>

@@ -7,7 +7,7 @@ import {
 export const ClinicCard = ({ name, desc, img, rating, address }) => {
   console.log(name, desc, img, rating, address);
   return (
-    <div className="flex bg-white flex-row rounded-lg font-montserrat">
+    <div className="flex shadow my-3 bg-white flex-row rounded-lg font-montserrat">
       <img src={img} className="w-[215px]" alt="clinic_photo" />
       <div className="divide-x-2 p-4 flex flex-row">
         <div className="flex px-4 flex-col flex-grow-0">

@@ -1,7 +1,7 @@
 import { ClinicCard, List } from "../../components";
 import { useEffect, useMemo, useState } from "react";
 import photo_clinic from "../../images/example_photo_clinic.png";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import clsx from "clsx";
 import { StarIcon, UserIcon } from "@heroicons/react/outline";
 
@@ -72,28 +72,28 @@ export const ChosenClinic = () => {
     () => [
       {
         id: "1",
-        name: "Dr. Juan",
-        specialist: "Oftalmología",
+        name: "Dr. Паленше",
+        specialist: "Urologist",
         experience: "5 años",
         rating: 4.8,
       },
       {
         id: "2",
-        name: "Dr. Huang",
+        name: "Dr. Тугенше",
         specialist: "Urologist",
         experience: "5 años",
         rating: 4.8,
       },
       {
         id: "3",
-        name: "Dr. Muan",
+        name: "Dr. Аслан",
         specialist: "Oftalmología",
         experience: "5 años",
         rating: 4.8,
       },
       {
         id: "4",
-        name: "Dr. Luan",
+        name: "Dr. Жандос",
         specialist: "Oftalmología",
         experience: "5 años",
         rating: 4.8,
@@ -114,7 +114,9 @@ export const ChosenClinic = () => {
       <ClinicCard {...clinic} />
       <List className="p-2.5 max-h-[400px]">
         {doctors.map((doctor) => (
-          <DoctorCard key={doctor.id} {...doctor} />
+          <NavLink to="/doctor/:id">
+            <DoctorCard key={doctor.id} {...doctor} />
+          </NavLink>
         ))}
       </List>
     </div>
@@ -123,7 +125,7 @@ export const ChosenClinic = () => {
 
 const DoctorCard = ({ name, specialist, experience, rating }) => {
   return (
-    <div className="bg-white rounded-xl">
+    <div className="bg-white rounded-xl shadow-md">
       <div
         className={clsx(
           "font-montserrat flex flex-col items-end",
