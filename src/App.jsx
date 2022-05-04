@@ -17,6 +17,7 @@ const PatientClinic = lazy(() => import("./pages/patientClinics"));
 const DoctorProfileForPatient = lazy(() =>
   import("./pages/profile/doctorProfileForPatient")
 );
+const Feedback = lazy(() => import("./components"));
 
 function App() {
   return (
@@ -38,11 +39,43 @@ function App() {
           <Route path="" element={<PatientProfile />} />
           <Route path="clinics">
             <Route path="" element={<PatientClinic />} />
-            <Route path=":id" element={<ChosenClinic />}>
-              <Route path="doctor">
-                <Route path=":id" element={<DoctorProfileForPatient />} />
-              </Route>
-            </Route>
+            <Route path=":id" element={<ChosenClinic />} />
+          </Route>
+        </Route>
+        <Route path="doctors">
+          <Route exact path=":id" element={<DoctorProfileForPatient />}>
+            <Route
+              path=""
+              element={
+                <div className="p-7">
+                  Вернем красоту улыбки за первый прием, без боли и стресса с
+                  гарантией качества до 5 лет на любую стоматологическую
+                  процедуру
+                </div>
+              }
+            />
+            <Route
+              path="feedback"
+              element={
+                <>
+                  <Feedback />
+                  <Feedback />
+                  <Feedback />
+                  <Feedback />
+                  <Feedback />
+                </>
+              }
+            />
+            <Route
+              path="calendar"
+              element={
+                <div>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Animi aperiam culpa dicta error laudantium optio provident
+                  quidem rem unde voluptate.
+                </div>
+              }
+            />
           </Route>
         </Route>
       </Route>

@@ -114,7 +114,7 @@ export const ChosenClinic = () => {
       <ClinicCard {...clinic} />
       <List className="p-2.5 max-h-[400px]">
         {doctors.map((doctor) => (
-          <NavLink to="/doctor/:id">
+          <NavLink to={`/doctors/${doctor.id}`}>
             <DoctorCard key={doctor.id} {...doctor} />
           </NavLink>
         ))}
@@ -125,7 +125,7 @@ export const ChosenClinic = () => {
 
 const DoctorCard = ({ name, specialist, experience, rating }) => {
   return (
-    <div className="bg-white rounded-xl shadow-md">
+    <div className="bg-white mb-3 rounded-xl shadow-md">
       <div
         className={clsx(
           "font-montserrat flex flex-col items-end",
