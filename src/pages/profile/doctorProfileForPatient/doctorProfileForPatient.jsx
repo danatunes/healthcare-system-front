@@ -17,7 +17,7 @@ export const DoctorProfileForPatient = () => {
               onClick={() => setListPage(null)}
               className={clsx(
                 "font-medium text-lg focus:text-[#3A57E8]"
-                // listPage === null && "text-[#3A57E8]"
+                listPage === null && "text-[#3A57E8]"
               )}
             >
               About Me
