@@ -8,4 +8,3 @@ export { Footer } from "./footer";
 export { LastNotificationList } from "./lastNotificationList";
 export { ClinicCard } from "./clinicCard";
 export { UserCard } from "./userCard";
-export { Feedback as default } from "./feedback";

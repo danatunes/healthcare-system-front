@@ -3,7 +3,7 @@ import {
   LastNotificationList,
   List,
   UserCard,
-} from "../../../components";
+} from "../../../../components";
 import { DownloadIcon } from "@heroicons/react/outline";
 import clsx from "clsx";
 

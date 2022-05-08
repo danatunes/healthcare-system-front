@@ -15,7 +15,10 @@ export const IndexLayout = () => {
       >
         <Header />
         <div
-          className={clsx("mx-auto h-full w-full flex flex-1", "sm:w-10/12")}
+          className={clsx(
+            "mx-auto h-full w-full flex flex-1 justify-center",
+            "sm:w-10/12"
+          )}
         >
           <Suspense fallback={<Loader />}>
             <Outlet />

@@ -1,6 +1,6 @@
-import { ClinicCard, List } from "../../components";
+import { ClinicCard, List } from "../../../components";
 import { FilterIcon } from "@heroicons/react/outline";
-import photo_clinic from "../../images/example_photo_clinic.png";
+import photo_clinic from "../../../images/example_photo_clinic.png";
 import { useMemo } from "react";
 import { NavLink } from "react-router-dom";
 

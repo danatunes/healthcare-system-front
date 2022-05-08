@@ -1,6 +1,6 @@
-import { ClinicCard, List } from "../../components";
+import { ClinicCard, List } from "../../../components";
 import { useEffect, useMemo, useState } from "react";
-import photo_clinic from "../../images/example_photo_clinic.png";
+import photo_clinic from "../../../images/example_photo_clinic.png";
 import { NavLink, useParams } from "react-router-dom";
 import clsx from "clsx";
 import { StarIcon, UserIcon } from "@heroicons/react/outline";

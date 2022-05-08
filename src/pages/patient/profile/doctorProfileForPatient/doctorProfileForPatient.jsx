@@ -1,12 +1,12 @@
 import { Suspense, useState } from "react";
-import { List, UserCard } from "../../../components";
+import { List, UserCard } from "../../../../components";
 import { Link, Outlet } from "react-router-dom";
 import clsx from "clsx";
 
 export const DoctorProfileForPatient = () => {
   const [listPage, setListPage] = useState(null);
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 max-w-4xl">
       <UserCard />
       <List
         className="shadow-md h-fit max-h-[450px]"

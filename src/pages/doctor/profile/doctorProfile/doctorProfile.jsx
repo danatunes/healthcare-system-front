@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import clsx from "clsx";
-import { HeadingProfile, LastNotificationList } from "../../../components";
+import { HeadingProfile, LastNotificationList } from "../../../../components";
 
 export const DoctorProfile = () => {
   return (

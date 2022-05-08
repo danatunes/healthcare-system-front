@@ -4,20 +4,30 @@ import { MainLayout } from "./layouts/main-layout";
 import { IndexLayout } from "./layouts/index-layout";
 import { DoctorLayout } from "./layouts/doctor-layout";
 import { lazy } from "react";
-import { ChosenClinic } from "./pages/chosenClinic/chosenClinic";
+import { ChosenClinic } from "./pages/patient/chosenClinic/chosenClinic";
+import DoctorProfileCalendar from "./components/doctorProfileCalendar";
 
 const Login = lazy(() => import("./pages/login"));
 const SignUp = lazy(() => import("./pages/signUp"));
 const Confirm = lazy(() => import("./pages/confirm"));
 const ResetPassword = lazy(() => import("./pages/resetPassword"));
-const DoctorProfile = lazy(() => import("./pages/profile/doctorProfile"));
-const DoctorPatients = lazy(() => import("./pages/doctorPatients"));
-const PatientProfile = lazy(() => import("./pages/profile/patientProfile"));
-const PatientClinic = lazy(() => import("./pages/patientClinics"));
-const DoctorProfileForPatient = lazy(() =>
-  import("./pages/profile/doctorProfileForPatient")
+const DoctorProfile = lazy(() =>
+  import("./pages/doctor/profile/doctorProfile")
 );
-const Feedback = lazy(() => import("./components"));
+const DoctorPatients = lazy(() => import("./pages/doctor/doctorPatients"));
+const WaitingList = lazy(() => import("./pages/doctor/waitingList"));
+const PatientProfile = lazy(() =>
+  import("./pages/patient/profile/patientProfile")
+);
+const PatientProfileForDoctor = lazy(() =>
+  import("./pages/doctor/profile/patientProfileForDoctor")
+);
+
+const PatientClinic = lazy(() => import("./pages/patient/patientClinics"));
+const DoctorProfileForPatient = lazy(() =>
+  import("./pages/patient/profile/doctorProfileForPatient")
+);
+const Feedback = lazy(() => import("./components/feedback"));
 
 function App() {
   return (
@@ -31,9 +41,14 @@ function App() {
       </Route>
       <Route exact path="/" element={<IndexLayout />}>
         <Route path="main" element={<MainLayout />} />
+        <Route path="doctor" element={<Navigate to=":id" replace />} />
         <Route path="doctor" element={<DoctorLayout />}>
-          <Route path="" element={<DoctorProfile />} />
-          <Route path="patients" element={<DoctorPatients />} />
+          <Route path=":id" element={<DoctorProfile />} />
+          <Route path="patients">
+            <Route path="" element={<DoctorPatients />} />
+            <Route path=":id" element={<PatientProfileForDoctor />} />
+            <Route path="waiting-list" element={<WaitingList />} />
+          </Route>
         </Route>
         <Route exact path="patient">
           <Route path="" element={<PatientProfile />} />
@@ -69,11 +84,9 @@ function App() {
             <Route
               path="calendar"
               element={
-                <div>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Animi aperiam culpa dicta error laudantium optio provident
-                  quidem rem unde voluptate.
-                </div>
+                <>
+                  <DoctorProfileCalendar />
+                </>
               }
             />
           </Route>
