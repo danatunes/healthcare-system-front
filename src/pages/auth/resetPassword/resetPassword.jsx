@@ -1,6 +1,6 @@
 import React from "react";
-import { InputWithBottomBorder } from "../../ui/inputs/inputWithBottomBorder";
-import { Button } from "../../ui/button/button";
+import { InputWithBottomBorder } from "../../../ui/inputs/inputWithBottomBorder";
+import { Button } from "../../../ui/button/button";
 
 export const ResetPassword = () => {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
-import { InputWithBottomBorder } from "../../ui/inputs/inputWithBottomBorder";
-import { LoginIntegration } from "../../components";
-import { Button } from "../../ui/button/button";
+import { InputWithBottomBorder } from "../../../ui/inputs/inputWithBottomBorder";
+import { LoginIntegration } from "../../../components";
+import { Button } from "../../../ui/button/button";
 import clsx from "clsx";
 
 export const SignUp = () => {

@@ -1,6 +1,6 @@
 import React from "react";
-import confirmPhoto from "../../images/Success_Register.png";
-import { Button } from "../../ui/button/button";
+import confirmPhoto from "../../../images/Success_Register.png";
+import { Button } from "../../../ui/button/button";
 
 export const Confirm = () => {
   return (

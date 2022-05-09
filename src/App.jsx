@@ -7,10 +7,10 @@ import { lazy } from "react";
 import { ChosenClinic } from "./pages/patient/chosenClinic/chosenClinic";
 import DoctorProfileCalendar from "./components/doctorProfileCalendar";
 
-const Login = lazy(() => import("./pages/login"));
-const SignUp = lazy(() => import("./pages/signUp"));
-const Confirm = lazy(() => import("./pages/confirm"));
-const ResetPassword = lazy(() => import("./pages/resetPassword"));
+const Login = lazy(() => import("./pages/auth/login"));
+const SignUp = lazy(() => import("./pages/auth/signUp"));
+const Confirm = lazy(() => import("./pages/auth/confirm"));
+const ResetPassword = lazy(() => import("./pages/auth/resetPassword"));
 const DoctorProfile = lazy(() =>
   import("./pages/doctor/profile/doctorProfile")
 );
@@ -22,8 +22,8 @@ const PatientProfile = lazy(() =>
 const PatientProfileForDoctor = lazy(() =>
   import("./pages/doctor/profile/patientProfileForDoctor")
 );
-
-const PatientClinic = lazy(() => import("./pages/patient/patientClinics"));
+const PatientClinic = lazy(() => import("./pages/patient/patientClinic"));
+const PatientClinics = lazy(() => import("./pages/patient/patientClinics"));
 const DoctorProfileForPatient = lazy(() =>
   import("./pages/patient/profile/doctorProfileForPatient")
 );
@@ -52,8 +52,9 @@ function App() {
         </Route>
         <Route exact path="patient">
           <Route path="" element={<PatientProfile />} />
+          <Route path="clinic" element={<PatientClinic />} />
           <Route path="clinics">
-            <Route path="" element={<PatientClinic />} />
+            <Route path="" element={<PatientClinics />} />
             <Route path=":id" element={<ChosenClinic />} />
           </Route>
         </Route>
