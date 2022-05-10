@@ -6,7 +6,6 @@ import {
 import clsx from "clsx";
 
 export const ClinicCard = ({ name, desc, img, rating, address }) => {
-  console.log(name, desc, img, rating, address);
   return (
     <div
       className={clsx(
