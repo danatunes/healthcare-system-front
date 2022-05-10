@@ -8,3 +8,4 @@ export { Footer } from "./footer";
 export * from "./lastNotificationList";
 export { ClinicCard } from "./clinicCard";
 export { UserCard } from "./userCard";
+export { DoctorCard } from "./doctorCard";

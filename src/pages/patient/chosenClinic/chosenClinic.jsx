@@ -1,9 +1,9 @@
 import { ClinicCard, List } from "../../../components";
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import photo_clinic from "../../../images/example_photo_clinic.png";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, Outlet, useParams } from "react-router-dom";
 import clsx from "clsx";
-import { StarIcon, UserIcon } from "@heroicons/react/outline";
+import Loader from "../../../ui/loader/loader";
 
 export const ChosenClinic = () => {
   const data = useMemo(
@@ -68,40 +68,6 @@ export const ChosenClinic = () => {
     []
   );
 
-  const doctors = useMemo(
-    () => [
-      {
-        id: "1",
-        name: "Dr. Паленше",
-        specialist: "Urologist",
-        experience: "5 años",
-        rating: 4.8,
-      },
-      {
-        id: "2",
-        name: "Dr. Тугенше",
-        specialist: "Urologist",
-        experience: "5 años",
-        rating: 4.8,
-      },
-      {
-        id: "3",
-        name: "Dr. Аслан",
-        specialist: "Oftalmología",
-        experience: "5 años",
-        rating: 4.8,
-      },
-      {
-        id: "4",
-        name: "Dr. Жандос",
-        specialist: "Oftalmología",
-        experience: "5 años",
-        rating: 4.8,
-      },
-    ],
-    []
-  );
-
   const { id } = useParams();
 
   const [clinic, setClinic] = useState("");
@@ -112,42 +78,40 @@ export const ChosenClinic = () => {
   return (
     <div className="space-y-7">
       <ClinicCard {...clinic} />
-      <List className="p-2.5 max-h-[400px]">
-        {doctors.map((doctor) => (
-          <NavLink to={`/doctors/${doctor.id}`}>
-            <DoctorCard key={doctor.id} {...doctor} />
-          </NavLink>
-        ))}
-      </List>
-    </div>
-  );
-};
-
-const DoctorCard = ({ name, specialist, experience, rating }) => {
-  return (
-    <div className="bg-white mb-3 rounded-xl shadow-md">
-      <div
-        className={clsx(
-          "font-montserrat flex flex-col items-end",
-          "sm:flex-row"
-        )}
-      >
-        <UserIcon
-          className={clsx(
-            "rounded-l-xl h-full w-44 bg-[#C4C4C4] text-white hidden",
-            "xl:block"
-          )}
-        />
-        <div className="py-3 px-8 flex flex-col justify-between w-full">
-          <h4 className="text-xl leading-8">{name}</h4>
-          <p className="text-sm font-normal text-gray-500">{specialist}</p>
-          <p className="text-sm font-normal text-gray-500">{experience}</p>
-          <div className="flex justify-end items-center flex-row space-x-1.5">
-            <StarIcon className="text-[#3A57E8] w-5" />
-            <p>{rating}</p>
+      <List
+        className="p-2.5 max-h-[400px]"
+        header={
+          <div className="w-full flex flex-row">
+            <NavLink
+              to=""
+              end
+              className={({ isActive }) =>
+                clsx(
+                  "w-1/2 flex justify-center font-medium text-lg focus:text-[#3A57E8]",
+                  isActive && "text-[#3A57E8]"
+                )
+              }
+            >
+              Doctors
+            </NavLink>
+            <NavLink
+              to="feedback"
+              className={({ isActive }) =>
+                clsx(
+                  "w-1/2 flex justify-center font-medium text-lg focus:text-[#3A57E8]",
+                  isActive && "text-[#3A57E8]"
+                )
+              }
+            >
+              Feedback
+            </NavLink>
           </div>
-        </div>
-      </div>
+        }
+      >
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
+      </List>
     </div>
   );
 };

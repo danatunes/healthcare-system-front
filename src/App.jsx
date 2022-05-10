@@ -24,6 +24,8 @@ const PatientProfileForDoctor = lazy(() =>
 );
 const PatientClinic = lazy(() => import("./pages/patient/patientClinic"));
 const PatientClinics = lazy(() => import("./pages/patient/patientClinics"));
+const Doctors = lazy(() => import("./pages/patient/chosenClinic/doctors"));
+
 const DoctorProfileForPatient = lazy(() =>
   import("./pages/patient/profile/doctorProfileForPatient")
 );
@@ -55,7 +57,21 @@ function App() {
           <Route path="clinic" element={<PatientClinic />} />
           <Route path="clinics">
             <Route path="" element={<PatientClinics />} />
-            <Route path=":id" element={<ChosenClinic />} />
+            <Route path=":id" element={<ChosenClinic />}>
+              <Route path="" element={<Doctors />} />
+              <Route
+                path="feedback"
+                element={
+                  <>
+                    <Feedback />
+                    <Feedback />
+                    <Feedback />
+                    <Feedback />
+                    <Feedback />
+                  </>
+                }
+              />
+            </Route>
           </Route>
         </Route>
         <Route path="doctors">
@@ -82,14 +98,7 @@ function App() {
                 </>
               }
             />
-            <Route
-              path="calendar"
-              element={
-                <>
-                  <DoctorProfileCalendar />
-                </>
-              }
-            />
+            <Route path="calendar" element={<DoctorProfileCalendar />} />
           </Route>
         </Route>
       </Route>

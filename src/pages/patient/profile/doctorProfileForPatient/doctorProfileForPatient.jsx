@@ -1,10 +1,10 @@
-import { Suspense, useState } from "react";
+import { Suspense } from "react";
 import { List, UserCard } from "../../../../components";
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import clsx from "clsx";
+import Loader from "../../../../ui/loader/loader";
 
 export const DoctorProfileForPatient = () => {
-  const [listPage, setListPage] = useState(null);
   return (
     <div className="space-y-4 max-w-4xl">
       <UserCard />
@@ -12,34 +12,44 @@ export const DoctorProfileForPatient = () => {
         className="shadow-md h-fit max-h-[450px]"
         header={
           <div className="w-full flex flex-row justify-between">
-            <Link
+            <NavLink
               to=""
-              onClick={() => setListPage(null)}
-              className={clsx(
-                "font-medium text-lg focus:text-[#3A57E8]",
-                listPage === null && "text-[#3A57E8]"
-              )}
+              end
+              className={({ isActive }) =>
+                clsx(
+                  "font-medium text-lg focus:text-[#3A57E8]",
+                  isActive && "text-[#3A57E8]"
+                )
+              }
             >
               About Me
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="feedback"
-              onClick={() => setListPage("feedback")}
-              className={clsx("font-medium text-lg focus:text-[#3A57E8]")}
+              className={({ isActive }) =>
+                clsx(
+                  "font-medium text-lg focus:text-[#3A57E8]",
+                  isActive && "text-[#3A57E8]"
+                )
+              }
             >
               Feedback
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="calendar"
-              onClick={() => setListPage("calendar")}
-              className="font-medium text-lg focus:text-[#3A57E8]"
+              className={({ isActive }) =>
+                clsx(
+                  "font-medium text-lg focus:text-[#3A57E8]",
+                  isActive && "text-[#3A57E8]"
+                )
+              }
             >
               Calendar
-            </Link>
+            </NavLink>
           </div>
         }
       >
-        <Suspense fallback={<div>loading...</div>}>
+        <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
       </List>
