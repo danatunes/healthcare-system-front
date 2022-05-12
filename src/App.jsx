@@ -43,6 +43,11 @@ function App() {
       </Route>
       <Route exact path="/" element={<IndexLayout />}>
         <Route path="main" element={<MainLayout />} />
+        <Route path="admin">
+          <Route path="clinics" element={<div>Hospital</div>} />
+          <Route path="clinic-admins" element={<div>Hospital</div>} />
+          <Route path="add-doctor" element={<div>Hospital</div>} />
+        </Route>
         <Route path="doctor" element={<Navigate to=":id" replace />} />
         <Route path="doctor" element={<DoctorLayout />}>
           <Route path=":id" element={<DoctorProfile />} />
